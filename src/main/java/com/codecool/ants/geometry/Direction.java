@@ -13,17 +13,11 @@ package com.codecool.ants.geometry;
             this.x = x;
             this.y = y;
         }
-        public int[] getCoordinate(){
-            int[] coordinate = new int[2];
-            coordinate[0] = this.x;
-            coordinate[1] = this.y;
-            return coordinate;
+        public Position getVector(){
+            return new Position(x,y);
         }
 
-        public int[] getCoordinate(int multiply){
-            int[] coordinate = new int[2];
-            coordinate[0] = this.x*multiply;
-            coordinate[1] = this.y*multiply;
-            return coordinate;
+        public Position getVector(int multiply){
+            return new Position(x*multiply,y*multiply);
         }
     }

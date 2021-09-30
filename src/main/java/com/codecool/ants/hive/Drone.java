@@ -58,12 +58,10 @@ public class Drone extends Ant {
         int randomIndex;
         Position nextPosition;
         randomIndex = random.nextInt(4);
-        int[] directionalCoordinates = Direction.values()[randomIndex].getCoordinate(colony.getWidth()/2);
-        int[] currentPositionCoordinates = currentPosition.getCoordinate();
-        int[] nextPositionCoordinates = new int[2];
-        nextPositionCoordinates[0] = currentPositionCoordinates[0] + directionalCoordinates[0];
-        nextPositionCoordinates[1] = currentPositionCoordinates[1] + directionalCoordinates[1];
-        nextPosition = positions[nextPositionCoordinates[0]][nextPositionCoordinates[1]];
+        Position directionalVector = Direction.values()[randomIndex].getVector(colony.getWidth()/2);
+        Position currentPositionCoordinates = currentPosition.getCoordinate();
+
+        nextPosition = positions[currentPositionCoordinates.x+directionalVector.x][currentPositionCoordinates.y+directionalVector.y];
         return nextPosition;
     }
 

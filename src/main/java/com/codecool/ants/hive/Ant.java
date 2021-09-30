@@ -6,11 +6,11 @@ import com.codecool.ants.geometry.Position;
 
 import java.util.Random;
 
-public class Ant {
+public abstract class Ant {
     private Position position;
     private String symbol;
 
-    Random random = new Random();
+    protected Random random = new Random();
 
     public Position getPosition() {
         return position;
@@ -35,16 +35,14 @@ public class Ant {
         this.symbol = symbol;
     }
 
-    public void act(Colony colony) {
-    }
+    public abstract void act(Colony colony);
 
-    Position getNextPosition(Position currentPosition, Direction direction, Position[][] positions) {
-        int[] directionalCoordinates = direction.getCoordinate();
-        int[] currentPositionCoordinates = currentPosition.getCoordinate();
-        int[] nextPositionCoordinates = new int[2];
-        nextPositionCoordinates[0] = currentPositionCoordinates[0] + directionalCoordinates[0];
-        nextPositionCoordinates[1] = currentPositionCoordinates[1] + directionalCoordinates[1];
-        return positions[nextPositionCoordinates[0]][nextPositionCoordinates[1]];
+    public Position getNextPosition(Position currentPosition, Direction direction, Position[][] positions) {
+        Position directionalPositionVector = direction.getVector();
+
+        int nextX = currentPosition.x + directionalPositionVector.x;
+        int nextY = currentPosition.y + directionalPositionVector.y;
+        return positions[nextX][nextY];
     }
 }
 
