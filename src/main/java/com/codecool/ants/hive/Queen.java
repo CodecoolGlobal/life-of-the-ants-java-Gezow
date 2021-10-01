@@ -4,11 +4,8 @@ import com.codecool.ants.Colony;
 import com.codecool.ants.Settings;
 import com.codecool.ants.geometry.Position;
 
-import java.util.Random;
-
 public class Queen extends Ant {
 
-    private Random random = new Random();
     private int mood;
     private boolean readyToMate;
 
