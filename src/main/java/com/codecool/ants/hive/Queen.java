@@ -10,8 +10,7 @@ public class Queen extends Ant {
     private boolean readyToMate;
 
     public Queen(Position position) {
-        setSymbol("Q");
-        setPosition(position);
+        super(position,"Q");
         mood = Settings.QUEENSMOOD.value + random.nextInt(50);
         readyToMate = false;
     }

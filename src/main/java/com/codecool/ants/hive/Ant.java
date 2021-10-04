@@ -12,6 +12,11 @@ public abstract class Ant {
 
     protected Random random = new Random();
 
+    public Ant(Position position, String symbol) {
+        this.position = position;
+        this.symbol = symbol;
+    }
+
     public Position getPosition() {
         return position;
     }

@@ -8,8 +8,7 @@ import com.codecool.ants.geometry.Position;
 public class Worker extends Ant {
 
     public Worker(Position position) {
-        setSymbol("W");
-        setPosition(position);
+        super(position,"W");
     }
 
     public void act(Colony colony) {

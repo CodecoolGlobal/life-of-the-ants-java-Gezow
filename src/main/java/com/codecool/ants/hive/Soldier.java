@@ -13,8 +13,7 @@ public class Soldier extends Ant {
     private Position patrol3;
 
     public Soldier(Position position) {
-        setSymbol("S");
-        setPosition(position);
+        super(position,"S");
     }
 
     public void act(Colony colony) {

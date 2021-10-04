@@ -9,8 +9,7 @@ public class Drone extends Ant {
     private int pause = 0;
 
     public Drone(Position position) {
-        setSymbol("D");
-        setPosition(position);
+        super(position,"D");
     }
 
     public void act(Colony colony) {
